@@ -1,6 +1,4 @@
 import './App.css';
-import CountDown from './components/CountDown';
-import { Header } from './components/Header';
 
 function App() {
   const user = {

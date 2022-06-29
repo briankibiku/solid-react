@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Formik } from "formik";
+import Parent from "./Parent";
 class Home extends React.Component {
   render() {
     return (
@@ -59,8 +60,29 @@ class Home extends React.Component {
             </form>
           )}
         </Formik>
+        <Parent>
+          <br />
+          <h2>Child in parent</h2>
+          <h4>Child 2 in parent</h4>
+        </Parent>
+        <Sing />
       </>
     );
   }
 }
 export default Home;
+
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">{props.left}</div>
+      <div className="SplitPane-right">{props.right}</div>
+    </div>
+  );
+}
+
+function Sing() {
+  return (
+    <SplitPane left={<div>Left Pannel</div>} right={<div>Right Pannel</div>} />
+  );
+}

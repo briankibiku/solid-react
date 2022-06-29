@@ -52,6 +52,11 @@ class Calculator extends Component {
         : temperature;
     return (
       <>
+        <h4>
+          Then, if other components also need it, you can lift it up to their
+          closest common ancestor the top-down data flow of state, hoist the
+          state to the nearest parent
+        </h4>
         <TemperatureInput
           scale="c"
           temperature={celsius}
