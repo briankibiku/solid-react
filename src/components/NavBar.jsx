@@ -15,11 +15,11 @@ function NavBar() {
       <Link to="/about" className="navlinks" style={{ padding: "10px" }}>
         About
       </Link>
-      <Link to="/temp" className="navlinks" style={{ padding: "10px" }}>
-        Temperature
-      </Link>
       <Link to="/calculator" className="navlinks" style={{ padding: "10px" }}>
-        Calculator
+        Temperature Calculator
+      </Link>
+      <Link to="/hooks" className="navlinks" style={{ padding: "10px" }}>
+        Hooks
       </Link>
     </>
   );

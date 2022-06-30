@@ -7,7 +7,6 @@ class Layout extends React.Component {
       <>
         <div style={{ padding: "40px" }}>
           <Header />
-          <br />
           <main>{this.props.children}</main>
           <Footer />
         </div>

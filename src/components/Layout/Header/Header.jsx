@@ -6,6 +6,7 @@ import About from "../../About";
 import NavBar from "../../NavBar";
 import BoilingVerdict from "../../BoilingVerdict";
 import Calculator from "../../Calculator";
+import Hooks from "../../Hooks";
 class Header extends React.Component {
   render() {
     return (
@@ -30,6 +31,7 @@ class Header extends React.Component {
               caseSensitive={false}
               element={<Calculator />}
             />
+            <Route path="/hooks" caseSensitive={false} element={<Hooks />} />
           </Routes>
         </Router>
       </>
