@@ -1,4 +1,5 @@
 import React from "react";
+import CustomHook from "./CustomHook";
 import MouseTracker from "./MouseTracker";
 import UseEffectHook from "./UseEffectHook";
 import UsestateHook from "./UsestateHook";
@@ -13,6 +14,7 @@ const Hooks = () => {
         <h4>2. usEffect</h4>
         <UseEffectHook />
         <MouseTracker />
+        <CustomHook />
       </div>
     </>
   );

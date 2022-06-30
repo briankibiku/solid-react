@@ -11,9 +11,11 @@ export default function UseEffectHook() {
       if (mounted) {
         setResponse(items);
         console.log(response);
+        console.log("-->APICALL<--");
       }
     });
     return () => (mounted = false);
+    // No idea why this error is here
   }, []);
   return (
     <>
@@ -23,6 +25,19 @@ export default function UseEffectHook() {
         componentDidMount, componentDidUpdate, and componentWillUnmount in React
         classes, but unified into a single API
       </p>
+      <code>
+        Some effects might require cleanup so they return a function:
+        {/* {useEffect(() => {
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+  return () => {
+    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+  }
+})} */}
+      </code>
+      {/* <p>{response?.bpi?.chartName}</p> */}
       <code>
         useEffect(() => {(document.title = `Your are on count ${count}`)})
       </code>
