@@ -4,6 +4,7 @@ import { getCryptoRates } from "../services/api";
 export default function UseEffectHook() {
   const [count, setCount] = useState(0);
   const [response, setResponse] = useState({});
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     let mounted = true;
     document.title = `Your are on count ${count}`;
@@ -17,6 +18,14 @@ export default function UseEffectHook() {
     return () => (mounted = false);
     // No idea why this error is here
   }, []);
+  // here the use effect does a cleanup by returning a function
+  useEffect(() => {
+    setOpen(true);
+    return () => {
+      setOpen(false);
+    };
+  }, []);
+
   return (
     <>
       <p>
