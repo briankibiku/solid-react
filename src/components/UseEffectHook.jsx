@@ -24,7 +24,7 @@ export default function UseEffectHook() {
     return () => {
       setOpen(false);
     };
-  }, []);
+  }, [open]);
 
   return (
     <>
@@ -34,22 +34,26 @@ export default function UseEffectHook() {
         componentDidMount, componentDidUpdate, and componentWillUnmount in React
         classes, but unified into a single API
       </p>
-      <code>
-        Some effects might require cleanup so they return a function:
-        {/* {useEffect(() => {
-  function handleStatusChange(status) {
-    setIsOnline(status.isOnline);
-  }
-  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
-  return () => {
-    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
-  }
-})} */}
-      </code>
+      <p>--- Some effects might require cleanup so they return a function:</p>
+      <pre>
+        {
+          " {useEffect(() => {function handleStatusChange(status) {setIsOnline(status.isOnline);}ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);"
+        }
+        {
+          "return () => { ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)}})} "
+        }
+      </pre>
       {/* <p>{response?.bpi?.chartName}</p> */}
       <code>
-        useEffect(() => {(document.title = `Your are on count ${count}`)})
+        useEffect(() = {(document.title = `Your are on count ${count}`)})
       </code>
+      <p>You can use multiple useEffects to seperate concern.</p>
+      <p>--- SKIPPING EFFECT IN CASE THE PROP DOES NOT CHANGE</p>
+      <pre>
+        {
+          "useEffect(() => {document.title = `You clicked ${count} times`;}, [count])"
+        }
+      </pre>
       <h6>Bitcoin Rate From Coinbase</h6>
       <p>Addition happening... {count}</p>
       <img

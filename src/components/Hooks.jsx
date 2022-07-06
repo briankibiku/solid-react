@@ -13,8 +13,9 @@ const Hooks = () => {
         <UsestateHook />
         <h4>2. usEffect</h4>
         <UseEffectHook />
-        <MouseTracker />
+        <h4>3. Custom Hooks</h4>
         <CustomHook />
+        <MouseTracker />
       </div>
     </>
   );
